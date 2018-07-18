@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Tn_CRM</display-name>
+  <!-- 定义容器的参数 -->
+  <context-param>
+      <!--告诉servlet容器去哪找spring的配置文件-->
+      <param-name>contextConfigLocation</param-name>
+      <!-- spring配置文件的路径 -->
+      <param-value>classpath:ApplicationContext.xml</param-value>
+  </context-param>
+  
+  <!--监听器 -->
+  <listener>
+      <!-- Spring提供的在web环境下的监听器，它能在程序初始化时将上面的Spring配置文件取出，并实现相关的IOC容器 -->
+      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!-- 解决延迟加载的问题 -->
+  <filter>
+     <filter-name>OpenSessionInViewFilter</filter-name>
+     <!-- 该类可以保证整个一次请求期间使用的都是同一个session -->
+     <filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+  </filter>
+  <filter-mapping>
+       <filter-name>OpenSessionInViewFilter</filter-name>
+       <url-pattern>*.action, ,</url-pattern>
+  </filter-mapping>
+  
+  <!-- *************************************** -->
+  <filter>
+      <filter-name>struts2</filter-name>
+      <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+       <filter-name>struts2</filter-name>
+       <url-pattern>/*</url-pattern>
+       <dispatcher>REQUEST</dispatcher>
+       <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>init.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
