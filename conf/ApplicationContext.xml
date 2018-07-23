@@ -48,6 +48,7 @@
            <tx:attributes>
                  <!-- 定义相应方法的操作方式，read-only表示只读 -->
                  <tx:method name="find*" read-only="true"/>
+                 <tx:method name="*" read-only="false"/>
            </tx:attributes>
         </tx:advice>
         <!-- 定义切面 -->

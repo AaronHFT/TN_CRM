@@ -124,7 +124,7 @@ public class Sellchance implements Serializable {
 		this.statu = statu;
 	}
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="tn_crm_sc_manager_pid")
+	@JoinColumn(name="tn_crm_sc_mananger_pid")
 	public Manager getManager() {
 		return manager;
 	}

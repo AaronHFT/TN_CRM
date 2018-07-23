@@ -66,7 +66,7 @@ public class Order implements Serializable {
 	public void setSum(Double sum) {
 		this.sum = sum;
 	}
-	@Column(name="tn_crm_order_status")
+	@Column(name="tn_crm_order_statu")
 	public String getStatu() {
 		return statu;
 	}

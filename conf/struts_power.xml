@@ -2,5 +2,10 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd" >
 <struts>
    <!-- 权限管理 -->
-
+   <package name="power" namespace="/" extends="json-default">
+       <action name="power_*" class="org.java.web.power.PowerAction" method="{1}">
+           <result name="initList">powerList.jsp</result>
+           <result name="initAdd">powerUpdate.jsp</result>
+       </action>
+   </package>
 </struts>

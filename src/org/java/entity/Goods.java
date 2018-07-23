@@ -29,7 +29,7 @@ public class Goods implements Serializable {
     private String level;//等级批次
     private String unit;//单位
     private Integer price;//商品单价
-    private Integer remark;//备注
+    private String remark;//备注
     
     private Set<Repertory> repertorys=new HashSet<Repertory>();//相关货品库存的集合
     private Set<Goodsorder> goodsorders=new HashSet<Goodsorder>();//相关货品订单详情
@@ -76,10 +76,10 @@ public class Goods implements Serializable {
 		this.unit = unit;
 	}	
 	@Column(name="tn_crm_goods_remark")
-	public Integer getRemark() {
+	public String getRemark() {
 		return remark;
 	}
-	public void setRemark(Integer remark) {
+	public void setRemark(String remark) {
 		this.remark = remark;
 	}
 	@Column(name="tn_crm_goods_price")

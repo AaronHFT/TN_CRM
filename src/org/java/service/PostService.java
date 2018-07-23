@@ -1,5 +1,9 @@
 package org.java.service;
 
-public interface PostService {
+import java.util.List;
 
+import org.java.entity.Post;
+
+public interface PostService {
+        public List<Post> findAllPost();
 }

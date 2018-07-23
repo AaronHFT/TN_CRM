@@ -13,10 +13,8 @@ public class ContactrecordDaoImpl extends BaseDaoImpl<Contactrecord> implements 
 	public ContactrecordDaoImpl(@Qualifier("sessionFactory")SessionFactory sessionFactory) {
         this.setSessionFactory(sessionFactory);
     }
-    
-    public ContactrecordDaoImpl() {
-    	
-    }
 	
-
+    public ContactrecordDaoImpl() {	
+           
+    }
 }

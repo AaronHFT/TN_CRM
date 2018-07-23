@@ -37,7 +37,17 @@ public class Customerserve implements Serializable {
     private Manager manager;//关联客户经理
     private Date dtime;//分配时间
     
-    @Id
+    
+    
+    
+	@Override
+	public String toString() {
+		return "Customerserve [id=" + id + ", type=" + type + ", summary=" + summary + ", customerinfo=" + customerinfo
+				+ ", statu=" + statu + ", request=" + request + ", cman=" + cman + ", ctime=" + ctime + ", deal=" + deal
+				+ ", dealman=" + dealman + ", dealtime=" + dealtime + ", result=" + result + ", csi=" + csi
+				+ ", manager=" + manager + ", dtime=" + dtime + "]";
+	}
+	@Id
     @Column(name="tn_crm_cs_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getId() {
@@ -137,7 +147,7 @@ public class Customerserve implements Serializable {
 		this.csi = csi;
 	}
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="tn_crm_cs_manager_id")
+	@JoinColumn(name="tn_crm_cs_manger_id")
 	public Manager getManager() {
 		return manager;
 	}

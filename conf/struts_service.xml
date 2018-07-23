@@ -2,5 +2,24 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd" >
 <struts>
    <!-- 服务管理 -->
-
+        <package name="service" namespace="/" extends="json-default">
+            <action name="service_*" class="org.java.web.service.ServiceAction" method="{1}">
+                 <result name="initCreate">serviceDetail.jsp</result>
+                 <result name="divid" type="redirectAction">
+                        <param name="actionName">background/service/service_showDivid.action</param>
+                        <param name="namespace">/</param>    
+                 </result>
+                 <result name="deal" type="redirectAction">
+                        <param name="actionName">background/service/service_showDeal.action</param>
+                        <param name="namespace">/</param>    
+                 </result>
+                 <result name="result" type="redirectAction">
+                        <param name="actionName">background/service/service_showResult.action</param>
+                        <param name="namespace">/</param>    
+                 </result>
+                 <result name="showDivid">serviceDivid.jsp</result>
+                 <result name="List">serviceList.jsp</result>
+                 <result name="success">serviceDetail.jsp</result>
+            </action>
+        </package>
 </struts>

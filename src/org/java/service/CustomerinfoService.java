@@ -1,5 +1,12 @@
 package org.java.service;
 
-public interface CustomerinfoService {
+import java.util.List;
 
+import org.java.entity.Customerinfo;
+import org.java.entity.Customerserve;
+
+public interface CustomerinfoService {
+         public List<Customerinfo> findLiveCustomers();
+         
+         
 }
